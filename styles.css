@@ -456,7 +456,8 @@ button[type="submit"]:hover {
 @media screen and (max-width: 768px) {
   /* Header */
 
-  .header {
+  .header,
+  .container-footer {
     flex-direction: column;
   }
 
@@ -466,10 +467,6 @@ button[type="submit"]:hover {
 
   .menu li {
     margin: 5px;
-  }
-
-  .container-footer {
-    flex-direction: column;
   }
 
   nav ul.menu li {
@@ -516,9 +513,7 @@ button[type="submit"]:hover {
   .section-tarifs .tarif {
     width: 100%;
     max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem;
     box-sizing: border-box;
   }
 
@@ -543,12 +538,12 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr;
   }
 
-  .copyright {
+  .copyright,
+  .reseaux-sociaux {
     grid-column: 1;
   }
 
   .reseaux-sociaux {
-    grid-column: 1;
     justify-content: center;
     margin-top: 1rem;
   }
@@ -594,12 +589,12 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr;
   }
 
-  .copyright {
+  .copyright,
+  .reseaux-sociaux {
     grid-column: 1;
   }
 
   .reseaux-sociaux {
-    grid-column: 1;
     justify-content: center;
     margin-top: 1rem;
   }
@@ -607,11 +602,6 @@ button[type="submit"]:hover {
   .copyright span::before {
     content: "";
   }
-  
-  .marker {
-    position: relative;
-    top: -130px;
-    }
 }
 
 /* Scrol et back to the top */
@@ -619,7 +609,6 @@ button[type="submit"]:hover {
 html {
   scroll-behavior: smooth;
   --scroll-behavior: smooth;
-  /*overflow-x: hidden;*/
 }
 
 #backToTop {
