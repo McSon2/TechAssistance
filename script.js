@@ -107,3 +107,18 @@ function toggleAccordion(content) {
     chevron.classList.add("rotate");
   }
 }
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const target = document.querySelector(anchor.getAttribute('href'));
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    const extraOffset = window.innerWidth < 768 ? -130 : -90;
+    
+    window.scrollTo({
+      top: target.offsetTop - headerHeight + extraOffset,
+      behavior: 'smooth',
+    });
+  });
+});
