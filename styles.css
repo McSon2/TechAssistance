@@ -464,14 +464,6 @@ button[type="submit"]:hover {
 
 /* Media Queries */
 
-@media screen and (max-width: 430px) {
-  .menu ul li a {
-    font-size: 0.883rem; /* Réduire la taille de la police */
-    margin: 0; /* Réduire l'espacement entre les éléments */
-  }
-}
-
-
 @media screen and (max-width: 768px) {
   /* Header */
 
@@ -493,10 +485,6 @@ button[type="submit"]:hover {
 
   nav ul.menu li {
     margin-bottom: 0.5rem;
-  }
-
-  .menu a {
-    font-size: 1rem;
   }
 
   /* Section a propos */
