@@ -227,7 +227,7 @@ ul {
 
 .section-services .container-services {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* Changez "space-between" en "space-around" */
   flex-wrap: wrap;
   margin-top: 1rem;
 }
@@ -237,12 +237,12 @@ ul {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 1.5rem;
-  width: calc(33.333% - 2rem);
+  width: calc(25% - 2rem); /* Changez 33.333% en 25% pour afficher 4 services sur une ligne */
   margin-bottom: 1rem;
 }
 
 .section-services .service .icone-service {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
 }
 
@@ -269,8 +269,8 @@ ul {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 1.5rem;
-  width: calc(33.333% - 2rem);
-  margin-bottom: 2rem;
+  width: calc(25% - 2rem); /* Modification ici */
+  margin-bottom: 1rem;
 }
 
 .section-tarifs .tarif h3 {
@@ -278,15 +278,14 @@ ul {
   margin-bottom: 1rem;
 }
 
-.section-tarifs .tarif .prix {
-  font-size: 2rem;
+.section-tarifs .tarif .prix-tarif {
+  font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 
 .section-tarifs .tarif p {
   font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* FAQ */
@@ -321,6 +320,7 @@ ul {
   overflow: hidden;
   padding: 0 1rem;
   transition: max-height 0.3s ease-out;
+  text-align: justify;
 }
 
 .fas {
@@ -504,13 +504,13 @@ button[type="submit"]:hover {
   /* Section Services et Tarifs */
 
   .section-services .container-services,
-  .section-tarifs .container-tarifs {
+  .section-tarifs .container-tarifs{
     flex-direction: column;
     align-items: center;
   }
 
   .section-services .service,
-  .section-tarifs .tarif {
+  .section-tarifs .tarif{
     width: 100%;
     max-width: 100%;
     margin: 0 0 2rem;
@@ -559,24 +559,14 @@ button[type="submit"]:hover {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .section-services .container-services,
-  .section-tarifs .container-tarifs {
-    justify-content: center;
+  .section-tarifs .container-tarifs{
+    justify-content: space-around;
   }
 
   .section-services .service,
   .section-tarifs .tarif {
     width: calc(50% - 1rem);
     margin-bottom: 2rem;
-  }
-
-  .section-services .service:first-child,
-  .section-tarifs .tarif:first-child {
-    margin-right: 1rem;
-  }
-
-  .section-services .service:nth-child(2),
-  .section-tarifs .tarif:nth-child(2) {
-    margin-left: 1rem;
   }
 
   .copyright span {
