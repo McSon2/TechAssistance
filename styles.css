@@ -38,11 +38,6 @@ ul {
   list-style: none;
 }
 
-.marker {
-  position: relative;
-  top: -90px;
-}
-
 /* Header */
 
 .header {
@@ -551,11 +546,6 @@ button[type="submit"]:hover {
   .footer {
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-
-  .marker {
-    position: relative;
-    top: -130px;
   }
 
   .copyright span {
