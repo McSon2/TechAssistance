@@ -555,7 +555,7 @@ button[type="submit"]:hover {
 
   .marker {
     position: relative;
-    top: -300px;
+    top: -130px;
   }
 
   .copyright span {
@@ -632,6 +632,11 @@ button[type="submit"]:hover {
   .copyright span::before {
     content: "";
   }
+  
+  .marker {
+    position: relative;
+    top: -130px;
+    }
 }
 
 /* Scrol et back to the top */
