@@ -109,15 +109,15 @@ function toggleAccordion(content) {
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const target = document.querySelector(this.getAttribute('href'));
-    const headerHeight = document.querySelector('.header').offsetHeight;
+    const target = document.querySelector(anchor.getAttribute('href'));
+    const headerHeight = document.querySelector('.header').getBoundingClientRect().height;
+    const extraOffset = headerHeight * 0.1; // Utilisez un pourcentage de la hauteur de l'en-tête pour calculer le décalage
 
     window.scrollTo({
-      top: target.offsetTop - headerHeight,
-      left: 0,
+      top: target.offsetTop - headerHeight + extraOffset,
       behavior: 'smooth',
     });
   });
