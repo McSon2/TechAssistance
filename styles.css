@@ -152,12 +152,24 @@ ul {
   margin-bottom: 2rem;
 }
 
-/* Sections à propos */
-
-.section-a-propos {
-  background-color: var(--background-color-alt);
+.section {
   padding: 2rem;
+  text-align: center;
 }
+
+/* Classe spécifique pour les sections avec une couleur de fond alternative */
+
+.section-alt {
+  background-color: var(--background-color-alt);
+}
+
+/* Classe spécifique pour les sections avec la couleur de fond principale */
+
+.section-main {
+  background-color: var(--background-color);
+}
+
+/* Sections à propos */
 
 .container-a-propos,
 .container-image {
@@ -213,12 +225,6 @@ ul {
 
 /* Section Services */
 
-.section-services {
-  padding: 2rem;
-  text-align: center;
-  background-color: var(--background-color);
-}
-
 .section-services .container-services {
   display: flex;
   justify-content: space-between;
@@ -250,12 +256,6 @@ ul {
 }
 
 /* Section Tarifs */
-
-.section-tarifs {
-  padding: 2rem;
-  text-align: center;
-  background-color: var(--background-color-alt);
-}
 
 .section-tarifs .container-tarifs {
   display: flex;
@@ -290,11 +290,6 @@ ul {
 }
 
 /* FAQ */
-
-.section-faq {
-  padding: 2rem;
-  background-color: var(--background-color);
-}
 
 .container-faq {
   max-width: 1000px; /* Ajustez cette valeur selon vos préférences */
@@ -337,12 +332,6 @@ ul {
 }
 
 /* Formulaire de contact */
-
-.section-contact {
-  background-color: var(--background-color-alt);
-  padding: 2rem;
-  text-align: center;
-}
 
 .form-container {
   background-color: var(--background-container);
@@ -488,6 +477,9 @@ button[type="submit"]:hover {
   }
 
   /* Section a propos */
+  .section {
+    padding: 1rem;
+  }
 
   .container-contenu {
     flex-direction: column;
@@ -510,10 +502,7 @@ button[type="submit"]:hover {
     width: 100%;
     padding-top: 2rem;
   }
-  .section-a-propos {
-    padding: 0;
-    padding-top: 2rem;
-  }
+
 
   /* Section Services et Tarifs */
 
