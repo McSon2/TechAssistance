@@ -466,8 +466,8 @@ button[type="submit"]:hover {
 
 @media screen and (max-width: 430px) {
   .menu ul li a {
-    font-size: 0.9rem; /* Réduire la taille de la police */
-    margin: 0 0.5rem; /* Réduire l'espacement entre les éléments */
+    font-size: 0.99rem; /* Réduire la taille de la police */
+    margin: 0; /* Réduire l'espacement entre les éléments */
   }
 }
 
