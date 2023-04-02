@@ -109,15 +109,15 @@ function toggleAccordion(content) {
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', (e) => {
     e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute('href'));
+    
+    const target = document.querySelector(anchor.getAttribute('href'));
     const headerHeight = document.querySelector('.header').offsetHeight;
-
+    const extraOffset = window.innerWidth < 768 ? -100 : -60; // Ajustez ces valeurs en fonction de vos besoins
+    
     window.scrollTo({
-      top: target.offsetTop - headerHeight,
-      left: 0,
+      top: target.offsetTop - headerHeight + extraOffset,
       behavior: 'smooth',
     });
   });
