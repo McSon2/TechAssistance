@@ -114,11 +114,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     const target = document.querySelector(anchor.getAttribute('href'));
     const headerHeight = document.querySelector('.header').getBoundingClientRect().height;
-    const extraOffset = headerHeight * 0.1; // Utilisez un pourcentage de la hauteur de l'en-tête pour calculer le décalage
+    const yOffset = -headerHeight; // Ajustez cette valeur pour obtenir le décalage souhaité
 
-    window.scrollTo({
-      top: target.offsetTop - headerHeight + extraOffset,
-      behavior: 'smooth',
-    });
+    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
