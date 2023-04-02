@@ -77,27 +77,36 @@ function closeOtherAccordions(id) {
   document.querySelectorAll('.accordion-item').forEach((item) => {
     if (item.getAttribute('data-id') !== id) {
       const content = item.querySelector('.accordion-content');
+      const chevron = item.querySelector('.fas');
       if (content.style.display === 'block') {
         content.style.display = 'none';
+        chevron.classList.remove('rotate');
       }
     }
   });
 }
 
+
 function toggleAccordion(content) {
   const allAccordionItems = document.querySelectorAll('.accordion-item');
+  const chevron = content.parentElement.querySelector('.fas');
   
   allAccordionItems.forEach((item) => {
     const otherContent = item.querySelector('.accordion-content');
     
     if (otherContent !== content && otherContent.style.maxHeight) {
       otherContent.style.maxHeight = null;
+      const otherChevron = item.querySelector('.fas');
+      otherChevron.classList.remove('rotate');
     }
   });
 
   if (content.style.maxHeight) {
     content.style.maxHeight = null;
+    chevron.classList.remove('rotate');
   } else {
     content.style.maxHeight = content.scrollHeight + 'px';
+    chevron.classList.add('rotate');
   }
 }
+

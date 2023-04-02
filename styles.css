@@ -333,6 +333,15 @@ ul {
   transition: max-height 0.3s ease-out;
 }
 
+.fas {
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+
 /* Formulaire de contact */
 
 .section-contact {
