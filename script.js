@@ -114,7 +114,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     const target = document.querySelector(anchor.getAttribute('href'));
     const headerHeight = document.querySelector('.header').getBoundingClientRect().height;
-    const yOffset = -headerHeight; // Ajustez cette valeur pour obtenir le décalage souhaité
+    const extraOffset = window.innerWidth < 768 ? -50 : -90; // Ajustez ces valeurs pour obtenir le décalage souhaité
+    const yOffset = -headerHeight + extraOffset;
 
     const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
