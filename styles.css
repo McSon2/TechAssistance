@@ -14,12 +14,17 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
 }
 
 body {
-  font-family: 'Apparel', sans-serif;
+  font-family: "Apparel", sans-serif;
   line-height: 1.6;
   color: var(--colorgen);
 }
@@ -293,10 +298,54 @@ ul {
   margin-bottom: 2rem;
 }
 
+/* FAQ */
+
+.section-faq {
+  padding: 2rem 0;
+  background-color: var(--background-color);
+}
+
+.titre-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container-faq {
+  max-width: 1000px; /* Ajustez cette valeur selon vos préférences */
+  margin: 0 auto; /* Centre la question sur la page */
+  padding: 1rem; /* Ajoute un espace autour du contenu */
+}
+
+.accordion {
+  display: grid;
+  gap: 1rem;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--background-color-alt);
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.3s ease-out;
+}
+
 /* Formulaire de contact */
 
 .section-contact {
-  background-color: var(--background-color);
+  background-color: var(--background-color-alt);
   padding: 2rem;
   text-align: center;
 }

@@ -62,3 +62,42 @@ document.addEventListener("DOMContentLoaded", function () {
     popup.classList.add("hidden");
   });
 });
+
+//FAQ
+
+document.querySelectorAll('.accordion-title').forEach((title) => {
+  title.addEventListener('click', () => {
+    const id = title.parentElement.getAttribute('data-id');
+    closeOtherAccordions(id);
+    toggleAccordion(title.nextElementSibling);
+  });
+});
+
+function closeOtherAccordions(id) {
+  document.querySelectorAll('.accordion-item').forEach((item) => {
+    if (item.getAttribute('data-id') !== id) {
+      const content = item.querySelector('.accordion-content');
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      }
+    }
+  });
+}
+
+function toggleAccordion(content) {
+  const allAccordionItems = document.querySelectorAll('.accordion-item');
+  
+  allAccordionItems.forEach((item) => {
+    const otherContent = item.querySelector('.accordion-content');
+    
+    if (otherContent !== content && otherContent.style.maxHeight) {
+      otherContent.style.maxHeight = null;
+    }
+  });
+
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + 'px';
+  }
+}
