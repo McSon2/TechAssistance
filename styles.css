@@ -310,6 +310,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   padding: 1rem;
   background-color: var(--background-color-alt);
   cursor: pointer;
