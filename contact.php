@@ -11,6 +11,22 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
+    // Nettoyage des données
+    $name = strip_tags($name);
+    $name = htmlspecialchars($name);
+
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+    $message = strip_tags($message);
+    $message = htmlspecialchars($message);
+
+    if($email === false) {
+        // Renvoi d'une réponse JSON en cas d'échec de la validation de l'e-mail
+        echo json_encode(['success' => false, 'error' => 'Email non valide']);
+        exit;
+    }
+
     // Construction du corps du message
     $body = "Nom: $name\n\nEmail: $email\n\nMessage:\n$message";
 

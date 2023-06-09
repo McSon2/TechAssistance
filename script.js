@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const popup = document.getElementById("popup");
   const closePopupButton = document.getElementById("close-popup");
   const formError = document.getElementById("form-error");
+  const emailError = document.getElementById("email-error");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -41,8 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
           if (response.success) {
             popup.classList.remove("hidden");
             form.reset();
+            emailError.classList.add("hidden");
+          } else {
+            if (response.error === 'Email non valide') { // Nouveau
+              emailError.classList.remove("hidden"); // Nouveau
           } else {
               formError.style.visibility = "visible";
+          }
           }
         } else {
               formError.style.visibility = "visible";
