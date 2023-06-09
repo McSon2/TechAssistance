@@ -299,7 +299,6 @@ ul {
 .container-faq {
   max-width: 1000px; /* Ajustez cette valeur selon vos préférences */
   margin: 0 auto; /* Centre la question sur la page */
-  padding: 1rem; /* Ajoute un espace autour du contenu */
 }
 
 .accordion {
