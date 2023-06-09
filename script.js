@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
   const popup = document.getElementById("popup");
   const closePopupButton = document.getElementById("close-popup");
+  const formError = document.getElementById("form-error");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -41,14 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.classList.remove("hidden");
             form.reset();
           } else {
-            alert(
-              "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer."
-            );
+              formError.style.visibility = "visible";
           }
         } else {
-          alert(
-            "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer."
-          );
+              formError.style.visibility = "visible";
         }
       }
     };
