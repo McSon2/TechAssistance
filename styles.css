@@ -505,7 +505,11 @@ button[type="submit"]:hover {
 
   /* Section a propos */
   .section {
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    min-height: 50vh;
   }
 
   .container-contenu {
@@ -517,6 +521,7 @@ button[type="submit"]:hover {
   }
   .titre-section {
     margin: 1rem;
+    padding-bottom: 1rem;
   }
   .container-image {
     margin: 0rem;
@@ -588,6 +593,20 @@ button[type="submit"]:hover {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 50vh;
+  }
+ 
+  .titre-section {
+    margin: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .section-services .container-services,
   .section-tarifs .container-tarifs{
     justify-content: space-around;
@@ -609,6 +628,10 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr;
   }
 
+  .copyright {
+    padding-top: 2rem;
+  }
+
   .copyright,
   .reseaux-sociaux {
     grid-column: 1;
@@ -616,7 +639,6 @@ button[type="submit"]:hover {
 
   .reseaux-sociaux {
     justify-content: center;
-    margin-top: 1rem;
   }
 
   .copyright span::before {
