@@ -241,6 +241,11 @@ ul {
   padding: 1.5rem;
   width: calc(25% - 2rem); /* Changez 33.333% en 25% pour afficher 4 services sur une ligne */
   margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out; /* Ajout de la transition */
+}
+
+.section-services .service:hover {
+  transform: scale(1.03); /* Ajout du zoom lors du survol */
 }
 
 .section-services .service .icone-service {
@@ -273,6 +278,11 @@ ul {
   padding: 1.5rem;
   width: calc(25% - 2rem); /* Modification ici */
   margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out; /* Ajout de la transition */
+}
+
+.section-tarifs .tarif:hover {
+  transform: scale(1.03); /* Ajout du zoom lors du survol */
 }
 
 .section-tarifs .tarif h3 {
