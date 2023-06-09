@@ -42,6 +42,7 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.3/lottie.min.js"></script>
     <script
       src="https://kit.fontawesome.com/a78097c9a9.js"
       crossorigin="anonymous"
@@ -327,7 +328,10 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
 
-          <button type="submit">Envoyer</button>
+          <div class="button-container">
+            <button type="submit" id="submit-button">Envoyer</button>
+            <div id="lottie-animation" style="width: 100px; height: 100px; position: absolute; display: none;"></div>
+        </div>
         </form>
       </div>
     </section>

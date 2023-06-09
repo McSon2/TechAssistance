@@ -44,7 +44,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
   form.addEventListener("submit", function (event) {
-    
+
+    document.getElementById('submit-button').style.display = 'none'; // cache le bouton
+
+    document.getElementById('lottie-animation').style.display = 'block'; // affiche l'animation
+
+    lottie.loadAnimation({
+        container: document.getElementById('lottie-animation'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '75378-sending.json'
+    });
+
     const emailInput = document.getElementById("email");
     const emailError = document.getElementById("email-error");
     
@@ -66,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
+        document.getElementById('submit-button').style.display = 'block'; // réaffiche le bouton
+        document.getElementById('lottie-animation').style.display = 'none'; // cache l'animation
+        lottie.stop();
         if (xhr.status === 200) {
           const response = JSON.parse(xhr.responseText);
 
