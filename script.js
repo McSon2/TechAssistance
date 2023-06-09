@@ -23,12 +23,42 @@ backToTopButton.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
+  const emailInput = document.getElementById("email");
   const popup = document.getElementById("popup");
   const closePopupButton = document.getElementById("close-popup");
   const formError = document.getElementById("form-error");
   const emailError = document.getElementById("email-error");
 
+  emailInput.addEventListener("input", function () {
+    const emailError = document.getElementById("email-error");
+    if (!this.validity.valid) {
+        if (this.validity.typeMismatch) {
+            emailError.textContent = "Veuillez entrer une adresse e-mail valide.";
+        } else if (this.validity.valueMissing) {
+            emailError.textContent = "Veuillez remplir ce champ.";
+        }
+        emailError.classList.remove("hidden");
+    } else {
+        emailError.classList.add("hidden");
+    }
+});
+
   form.addEventListener("submit", function (event) {
+    
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("email-error");
+    
+    if (!emailInput.validity.valid) {
+        event.preventDefault();
+        if (emailInput.validity.typeMismatch) {
+            emailError.textContent = "Veuillez entrer une adresse e-mail valide.";
+        } else if (emailInput.validity.valueMissing) {
+            emailError.textContent = "Veuillez remplir ce champ.";
+        }
+        emailError.classList.remove("hidden");
+        return;
+    }
+
     event.preventDefault();
 
     const formData = new FormData(form);
