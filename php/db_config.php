@@ -1,8 +1,11 @@
 <?php
-$servername = getenv('DB_SERVER');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$dbname = getenv('DB_NAME');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$servername = $_ENV['DB_SERVER'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
+$dbname = $_ENV['DB_NAME'];
 
 // Créez la connexion
 $conn = new mysqli($servername, $username, $password, $dbname);
