@@ -11,6 +11,6 @@ try {
     echo json_encode($articles);
 } catch(PDOException $e) {
     error_log("Erreur lors de la récupération des articles : " . $e->getMessage());
-    echo json_encode(array('error' => 'Une erreur est survenue.'));
+    echo json_encode(array('error' => 'Une erreur est survenue.', 'message' => $e->getMessage()));
 }
 ?>
