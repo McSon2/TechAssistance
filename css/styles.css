@@ -235,6 +235,7 @@ ul {
 }
 
 .section-services .service {
+  position: relative;
   background-color: var(--background-container);
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -260,6 +261,22 @@ ul {
 
 .section-services .service p {
   font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.info-link {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--text-color-alt);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.info-link:hover {
+  text-decoration: underline;
 }
 
 /* Section Tarifs */
