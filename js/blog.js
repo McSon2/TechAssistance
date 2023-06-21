@@ -1,5 +1,5 @@
 window.onload = function() {
-    fetch("php/fetch_articles.php")
+    fetch("../php/fetch_articles.php")
     .then(response => response.json())
     .then(data => {
         let articlesContainer = document.createElement('div');

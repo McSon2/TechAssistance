@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once '../php/db_config.php';
+    require_once "../php/db_config.php";
 
     $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
