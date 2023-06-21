@@ -1,22 +1,16 @@
 <?php
-include_once 'db_config.php';
+require_once 'db_config.php';
 
-$sql = "SELECT id, titre, contenu, date_publication, tags FROM articles ORDER BY date_publication DESC";
-$result = $conn->query($sql);
+try {
+    $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$articles = array();
+    $stmt = $db->query("SELECT * FROM articles");
+    $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($result->num_rows > 0) {
-    // Parcourir les lignes de résultat et les ajouter au tableau des articles
-    while($row = $result->fetch_assoc()) {
-        $articles[] = $row;
-    }
-} else {
-    echo "0 results";
+    echo json_encode($articles);
+} catch(PDOException $e) {
+    error_log("Erreur lors de la récupération des articles : " . $e->getMessage());
+    echo json_encode(array('error' => 'Une erreur est survenue.'));
 }
-
-// Convertir le tableau des articles en JSON
-echo json_encode($articles);
-
-$conn->close();
 ?>
