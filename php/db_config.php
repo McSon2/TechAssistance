@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; // Remplacez par votre serveur, généralement "localhost"
-$username = "username"; // Remplacez par votre nom d'utilisateur de la base de données
-$password = "password"; // Remplacez par votre mot de passe de la base de données
-$dbname = "database"; // Remplacez par le nom de votre base de données
+$servername = getenv('DB_SERVER');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
+$dbname = getenv('DB_NAME');
 
 // Créez la connexion
 $conn = new mysqli($servername, $username, $password, $dbname);
