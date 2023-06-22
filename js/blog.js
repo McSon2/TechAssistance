@@ -30,10 +30,6 @@ window.onload = function () {
         tags.innerText = `Tags: ${article.tags}`;
         articleCard.appendChild(tags);
 
-        let content = document.createElement("p");
-        content.innerText = article.contenu;
-        articleCard.appendChild(content);
-
         articlesContainer.appendChild(articleCard);
       });
 
