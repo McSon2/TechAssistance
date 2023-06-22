@@ -1,5 +1,5 @@
 window.onload = function () {
-  fetch("../php/fetch_articles.php")
+  fetch("php/fetch_articles.php")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Erreur de requête: " + response.status);
