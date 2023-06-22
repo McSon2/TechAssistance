@@ -22,7 +22,12 @@ try {
     if ($article) {
         echo "Avant l'envoi de l'article\n";
         header('Content-Type: application/json');
-        echo json_encode($article);
+        $json = json_encode($article);
+        if ($json === false) {
+            echo "Erreur lors de l'encodage JSON : " . json_last_error_msg() . "\n";
+        } else {
+            echo $json;
+        }
         echo "\nAprès l'envoi de l'article\n";
     } else {
         echo "Aucun article trouvé avec cet ID.\n";
