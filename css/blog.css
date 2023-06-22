@@ -1,0 +1,15 @@
+.article-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .article-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+  }
+  
+  .article-card p {
+    margin: 0 0 10px 0;
+  }
+  
