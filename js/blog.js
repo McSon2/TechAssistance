@@ -33,10 +33,10 @@ window.onload = function () {
         articleCard.appendChild(tags);
 
         // Ajoutez un événement click à la carte d'article
-        articleCard.addEventListener("click", function () {
+        articleCard.addEventListener('click', function() {
           fetch("php/fetch_article.php?id=" + this.dataset.id)
-            .then((response) => response.json())
-            .then((data) => {
+            .then(response => response.json())
+            .then(data => {
               // Ici, vous pouvez afficher le contenu de l'article dans votre page
               // Par exemple, vous pouvez remplacer le contenu de la section blog par le contenu de l'article
               let blogSection = document.querySelector("#blog");
@@ -47,7 +47,7 @@ window.onload = function () {
                 <p>${data.contenu}</p>
               `;
             })
-            .catch((error) => console.error(error));
+            .catch(error => console.error(error));
         });
 
         articlesContainer.appendChild(articleCard);
