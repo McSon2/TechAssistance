@@ -14,8 +14,9 @@ window.onload = function () {
       articlesContainer.className = "articles-container";
 
       data.forEach((article) => {
-        let articleCard = document.createElement("div");
+        let articleCard = document.createElement("a");
         articleCard.className = "article-card";
+        articleCard.href = `article.php?id=${article.id}`;
 
         let title = document.createElement("h2");
         title.innerText = article.titre;
