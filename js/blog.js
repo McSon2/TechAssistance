@@ -41,10 +41,10 @@ window.onload = function () {
               // Par exemple, vous pouvez remplacer le contenu de la section blog par le contenu de l'article
               let blogSection = document.querySelector("#blog");
               blogSection.innerHTML = `
-                <h1>${data.titre}</h1>
-                <p class="article-date">Publié le ${data.date_publication}</p>
-                <p class="article-tags">Tags: ${data.tags}</p>
-                <p>${data.contenu}</p>
+                <h1 class="title">${data.titre}</h1>
+                <p class="date">Publié le ${data.date_publication}</p>
+                <p class="tags">Tags: ${data.tags}</p>
+                <p class="text">${data.contenu}</p>
               `;
             })
             .catch(error => console.error(error));
