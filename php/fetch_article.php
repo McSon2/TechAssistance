@@ -18,13 +18,13 @@ try {
 
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($article) {
-        header('Content-Type: application/json');
-        echo json_encode($article);
-    } else {
-        header('Content-Type: application/json');
-        echo json_encode(['error' => 'Aucun article trouvé avec cet ID.']);
-    }
+    header('Content-Type: application/json');
+        if ($article) {
+            echo json_encode($article);
+        } else {
+            echo json_encode(['error' => 'Aucun article trouvé avec cet ID.']);
+        }
+
 } catch(Exception $e) {
     error_log("Erreur : " . $e->getMessage());
     header('Content-Type: application/json');
