@@ -1,4 +1,6 @@
 <?php
+echo "Début du script";
+var_dump($_GET);
 require_once 'db_config.php';
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : null;
