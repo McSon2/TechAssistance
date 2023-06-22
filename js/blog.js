@@ -15,7 +15,7 @@ window.onload = function () {
 
       data.forEach((article) => {
         let articleCard = document.createElement("div");
-        articleCard.className = "article-card";
+        articleCard.className = "article-card service";
         articleCard.dataset.id = article.id; // Ajoutez l'ID de l'article comme attribut de données
 
         let title = document.createElement("h2");
