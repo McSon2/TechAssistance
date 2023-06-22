@@ -1,7 +1,7 @@
 <?php
 require_once 'db_config.php';
 
-$id = $_GET['id'] ?? null;
+$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 
 if ($id === null) {
     header('Content-Type: application/json');
