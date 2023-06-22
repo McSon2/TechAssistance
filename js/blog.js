@@ -37,10 +37,7 @@ window.onload = function () {
         articlesContainer.appendChild(articleCard);
       });
 
-      document.body.insertBefore(
-        articlesContainer,
-        document.querySelector(".footer")
-      );
+      document.querySelector("#blog").appendChild(articlesContainer);
     })
 
     .catch((error) => console.error(error));
