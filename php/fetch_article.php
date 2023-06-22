@@ -3,28 +3,29 @@ header('Content-Type: application/json');
 
 require_once 'db_config.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+$id = $_GET['id'] ?? null;
 
-    try {
-        $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if ($id === null) {
+    echo json_encode(['error' => 'ID de l\'article non fourni.']);
+    exit();
+}
 
-        $stmt = $db->prepare("SELECT * FROM articles WHERE id = :id");
-        $stmt->execute(['id' => $id]);
+try {
+    $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $article = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $db->prepare("SELECT * FROM articles WHERE id = :id");
+    $stmt->execute([':id' => $id]);
 
-        if ($article) {
-            echo json_encode($article);
-        } else {
-            echo json_encode(array('error' => 'Aucun article trouve.'));
-        }
-    } catch(PDOException $e) {
-        error_log("Erreur : " . $e->getMessage());
-        echo json_encode(array('error' => 'Une erreur est survenue.', 'message' => $e->getMessage()));
+    $article = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($article) {
+        echo json_encode($article);
+    } else {
+        echo json_encode(['error' => 'Aucun article trouvé avec cet ID.']);
     }
-} else {
-    echo json_encode(array('error' => 'Aucun ID d\'article specifie.'));
+} catch(Exception $e) {
+    error_log("Erreur : " . $e->getMessage());
+    echo json_encode(['error' => 'Une erreur est survenue.', 'message' => $e->getMessage()]);
 }
 ?>
