@@ -23,10 +23,12 @@ window.onload = function () {
         articleCard.appendChild(title);
 
         let date = document.createElement("p");
+        date.className = "article-date";
         date.innerText = `Publié le ${article.date_publication}`;
         articleCard.appendChild(date);
 
         let tags = document.createElement("p");
+        tags.className = "article-tags";
         tags.innerText = `Tags: ${article.tags}`;
         articleCard.appendChild(tags);
 

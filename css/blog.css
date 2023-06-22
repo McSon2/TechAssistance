@@ -29,4 +29,20 @@
     font-size: 1rem;
     margin-bottom: 20px;
   }
+
+  .article-date {
+    font-size: 0.8rem; /* Réduisez la taille de la police */
+    position: absolute; /* Positionne l'élément de manière absolue par rapport à son parent */
+    bottom: 10px; /* Aligne l'élément en bas de son parent */
+    left: 0; /* Aligne l'élément à gauche de son parent */
+    right: 0; /* Aligne l'élément à droite de son parent */
+    text-align: center; /* Centre le texte */
+  }
+  
+  .article-tags {
+    font-size: 0.9rem; /* Réduisez la taille de la police */
+    text-align: center; /* Centre le texte */
+    margin-top: 10px; /* Ajoutez une marge en haut pour séparer les tags du titre */
+  }
+  
   
