@@ -10,7 +10,7 @@ if ($id === null) {
 }
 
 try {
-    $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $db = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $db->prepare("SELECT * FROM articles WHERE id = :id");
