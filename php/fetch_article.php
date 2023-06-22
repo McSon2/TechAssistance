@@ -1,9 +1,7 @@
 <?php
-echo "Début du script";
-var_dump($_GET);
 require_once 'db_config.php';
 
-$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
+$id = $_GET['id'] ?? null;
 
 if ($id === null) {
     header('Content-Type: application/json');
@@ -15,11 +13,15 @@ try {
     $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    echo "Avant la requête à la base de données\n";
     $stmt = $db->prepare("SELECT * FROM articles WHERE id = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
+    echo "Après la requête à la base de données\n";
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    var_dump($article);
 
     header('Content-Type: application/json');
     if ($article) {
