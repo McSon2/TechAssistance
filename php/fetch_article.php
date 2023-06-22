@@ -14,17 +14,17 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $db->prepare("SELECT * FROM articles WHERE id = :id");
-    $stmt->execute([':id' => $id]);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
 
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
     header('Content-Type: application/json');
-        if ($article) {
-            echo json_encode($article);
-        } else {
-            echo json_encode(['error' => 'Aucun article trouvé avec cet ID.']);
-        }
-
+    if ($article) {
+        echo json_encode($article);
+    } else {
+        echo json_encode(['error' => 'Aucun article trouvé avec cet ID.']);
+    }
 } catch(Exception $e) {
     error_log("Erreur : " . $e->getMessage());
     header('Content-Type: application/json');
