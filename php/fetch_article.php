@@ -18,13 +18,13 @@ if (isset($_GET['id'])) {
         if ($article) {
             echo json_encode($article);
         } else {
-            echo json_encode(array('error' => 'Aucun article trouvé.'));
+            echo json_encode(array('error' => 'Aucun article trouve.'));
         }
     } catch(PDOException $e) {
         error_log("Erreur : " . $e->getMessage());
         echo json_encode(array('error' => 'Une erreur est survenue.', 'message' => $e->getMessage()));
     }
 } else {
-    echo json_encode(array('error' => 'Aucun ID d\'article spécifié.'));
+    echo json_encode(array('error' => 'Aucun ID d\'article specifie.'));
 }
 ?>
