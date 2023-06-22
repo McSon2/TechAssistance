@@ -18,6 +18,9 @@ try {
 
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // Ajoutez cette ligne pour afficher le contenu de $article
+    var_dump($article);
+
     if ($article) {
         header('Content-Type: application/json');
         echo json_encode($article);
