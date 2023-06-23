@@ -80,7 +80,6 @@
   }
 
   .article-card {
-    width: calc(50% - 1rem);
     margin-bottom: 2rem;
   }
 }
