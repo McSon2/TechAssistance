@@ -15,7 +15,7 @@ window.onload = function () {
 
       data.forEach((article) => {
         let articleCard = document.createElement("div");
-        articleCard.className = "article-card service";
+        articleCard.className = "article-card";
         articleCard.dataset.id = article.id; // Ajoutez l'ID de l'article comme attribut de données
 
         // Utilisez les littéraux de gabarit pour créer le HTML de la carte d'article

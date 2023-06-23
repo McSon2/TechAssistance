@@ -4,7 +4,18 @@
     flex-wrap: wrap;
     margin-top: 2rem;
   }
-  
+
+  .article-card {
+    position: relative;
+    background-color: var(--background-container);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 1.5rem;
+    width: calc(25% - 2rem); /* Changez 33.333% en 25% pour afficher 4 services sur une ligne */
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out; /* Ajout de la transition */
+  }
+
   .article-card > * {
     position: absolute;
     top: 0;
