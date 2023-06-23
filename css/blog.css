@@ -10,30 +10,12 @@
     background-color: var(--background-container);
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    padding: 1.5rem;
+    padding: 7rem;
     width: calc(25% - 2rem);
     padding-bottom: calc(25% - 2rem); /* Ajoutez cette ligne */
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
     transition: transform 0.3s ease-in-out;
     overflow: hidden; /* Ajoutez cette ligne pour cacher le contenu qui dépasse */
-  }
-  
-
-  .article-card > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  
-
-  .article-card > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
   
   .article-card:hover {
