@@ -10,9 +10,6 @@ window.onload = function () {
       console.log(data); // Affiche la réponse JSON dans la console du navigateur
 
       // Le reste de votre code pour afficher les articles dans votre page
-      let articlesContainer = document.createElement("div");
-      articlesContainer.className = "articles-container";
-      articlesContainer.dataset.id = "blog"
 
       data.forEach((article) => {
         let articleCard = document.createElement("div");
