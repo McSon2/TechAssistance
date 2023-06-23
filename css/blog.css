@@ -1,8 +1,14 @@
+.sectionblog {
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  padding-top: 6%;
+}
+
 .articles-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 1rem;
 }
 
 .article-card {
