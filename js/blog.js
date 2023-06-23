@@ -7,16 +7,14 @@ window.onload = function () {
       return response.json();
     })
     .then((data) => {
-      // Le reste de votre code pour afficher les articles dans votre page
+      console.log(data); // Affiche la réponse JSON dans la console du navigateur
 
-      // Créez le conteneur des articles ici
-      let articlesContainer = document.createElement("div");
-      articlesContainer.className = "articles-container";
+      // Utilisez l'élément avec l'ID "blog" comme conteneur pour vos articles
+      let articlesContainer = document.querySelector("#blog");
 
       data.forEach((article) => {
         let articleCard = document.createElement("div");
         articleCard.className = "article-card";
-
         articleCard.dataset.id = article.id; // Ajoutez l'ID de l'article comme attribut de données
 
         // Utilisez les littéraux de gabarit pour créer le HTML de la carte d'article
@@ -33,8 +31,7 @@ window.onload = function () {
             .then((data) => {
               // Ici, vous pouvez afficher le contenu de l'article dans votre page
               // Par exemple, vous pouvez remplacer le contenu de la section blog par le contenu de l'article
-              let blogSection = document.querySelector("#blog");
-              blogSection.innerHTML = `
+              articlesContainer.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
                 <p class="date">Publié le ${data.date_publication}</p>
                 <p class="tags">Tags: ${data.tags}</p>
@@ -44,10 +41,9 @@ window.onload = function () {
             .catch((error) => console.error(error));
         });
 
+        // Ajoutez la carte d'article au conteneur des articles
         articlesContainer.appendChild(articleCard);
       });
-
-      document.querySelector("#blog").appendChild(articlesContainer);
     })
     .catch((error) => console.error(error));
 };
