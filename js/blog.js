@@ -7,7 +7,12 @@ window.onload = function () {
       return response.json();
     })
     .then((data) => {
-      console.log(data); // Affiche la réponse JSON dans la console du navigateur
+      
+      data.sort((a, b) => {
+        let dateA = new Date(a.date_publication);
+        let dateB = new Date(b.date_publication);
+        return dateB - dateA;
+      });
 
       // Utilisez l'élément avec l'ID "blog" comme conteneur pour vos articles
       let articlesContainer = document.querySelector("#blog");
