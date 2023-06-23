@@ -6,11 +6,11 @@
 }
 
 .articles-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
-
 
 .article-card {
   position: relative;
@@ -18,12 +18,10 @@
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 1.5rem;
-  min-width: 200px; /* Largeur minimale de la carte */
-  max-width: 1fr; /* Largeur maximale de la carte */
+  width: calc(25% - 2rem);
   margin-bottom: 1rem;
   transition: transform 0.3s ease-in-out;
 }
-
 
 .article-card:hover {
   transform: scale(1.03);
