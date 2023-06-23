@@ -12,9 +12,17 @@
     border-radius: 5px;
     padding: 1.5rem;
     width: calc(25% - 2rem);
-    min-height: 100%;
+    padding-bottom: 100%; /* Ajoutez ceci */
     margin-bottom: 1rem;
     transition: transform 0.3s ease-in-out;
+  }
+
+  .article-card > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   
   .article-card:hover {
