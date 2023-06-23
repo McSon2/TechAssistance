@@ -1,3 +1,10 @@
+.articles-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 .article-card {
   position: relative;
   background-color: var(--background-container);
