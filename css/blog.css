@@ -12,6 +12,13 @@
   margin-top: 2rem;
 }
 
+.articles-container::after {
+  content: '';
+  flex-grow: 999999999; /* Un grand nombre pour occuper tout l'espace restant */
+  height: 0; /* Pour ne pas affecter la mise en page */
+  visibility: hidden; /* Pour le rendre invisible */
+}
+
 .article-card {
   position: relative;
   background-color: var(--background-container);
@@ -29,12 +36,11 @@
 
 .article-card h2 {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .article-card p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 0.8rem;
 }
 
 #blog .title {

@@ -20,8 +20,8 @@ window.onload = function () {
         // Utilisez les littéraux de gabarit pour créer le HTML de la carte d'article
         articleCard.innerHTML = `
           <h2>${article.titre}</h2>
-          <p class="article-date">Publié le ${article.date_publication}</p>
           <p class="article-tags">Tags: ${article.tags}</p>
+          <p class="article-date">Publié le ${article.date_publication}</p>
         `;
 
         // Ajoutez un événement click à la carte d'article
