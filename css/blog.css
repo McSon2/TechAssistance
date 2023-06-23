@@ -12,10 +12,21 @@
     border-radius: 5px;
     padding: 1.5rem;
     width: calc(25% - 2rem);
-    padding-bottom: 100%; /* Ajoutez ceci */
+    height: 0;
+    padding-bottom: calc(25% - 2rem);
     margin-bottom: 1rem;
     transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Ajoutez ceci pour empêcher le contenu de déborder */
   }
+  
+  .article-card > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
 
   .article-card > * {
     position: absolute;
