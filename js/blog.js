@@ -7,8 +7,11 @@ window.onload = function () {
       return response.json();
     })
     .then((data) => {
-
       // Le reste de votre code pour afficher les articles dans votre page
+
+      // Créez le conteneur des articles ici
+      let articlesContainer = document.createElement("div");
+      articlesContainer.className = "articles-container";
 
       data.forEach((article) => {
         let articleCard = document.createElement("div");
