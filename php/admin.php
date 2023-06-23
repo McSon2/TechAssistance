@@ -5,17 +5,15 @@ $db = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $
 
 // Récupération des données du formulaire
 $titre = $_POST['titre'];
-$date_publication = $_POST['date_publication'];
 $tags = $_POST['tags'];
 $contenu = $_POST['contenu'];
 
 // Préparation de la requête SQL
-$query = $db->prepare("INSERT INTO articles (titre, date_publication, tags, contenu) VALUES (:titre, :date_publication, :tags, :contenu)");
+$query = $db->prepare("INSERT INTO articles (titre, date_publication, tags, contenu) VALUES (:titre, NOW(), :tags, :contenu)");
 
 // Exécution de la requête SQL
 $query->execute([
     'titre' => $titre,
-    'date_publication' => $date_publication,
     'tags' => $tags,
     'contenu' => $contenu
 ]);
