@@ -7,7 +7,6 @@ window.onload = function () {
       return response.json();
     })
     .then((data) => {
-      console.log(data); // Affiche la réponse JSON dans la console du navigateur
 
       // Le reste de votre code pour afficher les articles dans votre page
 
