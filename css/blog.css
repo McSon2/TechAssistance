@@ -12,7 +12,7 @@
     border-radius: 5px;
     padding: 1.5rem;
     width: calc(25% - 2rem);
-    min-height: 25vw;
+    min-height: 100%;
     margin-bottom: 1rem;
     transition: transform 0.3s ease-in-out;
   }
@@ -43,3 +43,37 @@
     text-align: center; /* Centre le texte */
     margin-top: 2px; /* Ajoutez une marge en haut pour séparer les tags du titre */
   }
+
+  #blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+  
+  #blog .title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #blog .date {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  #blog .tags {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  #blog .text {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: justify;
+  }
+  
