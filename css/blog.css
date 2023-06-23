@@ -59,3 +59,30 @@
   line-height: 1.5em;
   text-align: justify;
 }
+
+/* Pour les écrans jusqu'à 768px de large */
+@media screen and (max-width: 768px) {
+  .articles-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 2rem;
+    box-sizing: border-box;
+  }
+}
+
+/* Pour les écrans entre 769px et 1024px de large */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .articles-container {
+    justify-content: space-around;
+  }
+
+  .article-card {
+    width: calc(50% - 1rem);
+    margin-bottom: 2rem;
+  }
+}
