@@ -7,7 +7,7 @@
 
 .articles-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Remplacez 200px par la largeur minimale que vous voulez pour vos cartes */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Remplacez 200px par la largeur minimale que vous voulez pour vos cartes */
   gap: 2rem; /* L'espace entre les cartes */
   justify-items: start; /* Alignement à gauche */
 }
@@ -76,7 +76,7 @@
 /* Pour les écrans entre 769px et 1024px de large */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .articles-container {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Deux cartes par ligne */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Deux cartes par ligne */
   }
 
   .article-card {
