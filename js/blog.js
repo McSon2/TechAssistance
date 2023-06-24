@@ -35,9 +35,12 @@ window.onload = function () {
             .then((data) => {
               let blogSection = document.querySelector("#blog");
               blogSection.classList.add("article-view");
+
+              let contenu = marked(data.contenu);
+
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
-                <p class="text">${data.contenu}</p>
+                <div class="text">${contenu}</div>
                 <p class="tags">Tags: ${data.tags}</p>
                 <p class="date">Publié le ${data.date_publication}</p>
                 `;
