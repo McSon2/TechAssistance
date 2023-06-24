@@ -1,6 +1,8 @@
 window.onload = function () {
 
-  let md = window.markdownit();
+  let md = window.markdownit({
+    breaks: true // Convertir les retours à la ligne en <br>
+  });
 
   fetch("php/fetch_articles.php")
     .then((response) => {
