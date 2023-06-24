@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration du blog</title>
+    <link rel="stylesheet" href="/css/admin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -16,8 +17,8 @@
         <textarea id="contenu" name="contenu"></textarea><br>
         <input type="submit" value="Ajouter l'article">
     </form>
-    <div id="notification" style="display: none;">L'article a été ajouté avec succès.</div>
-    <button id="ok-button" style="display: none;" onclick="hideNotification()">OK</button>
+    <div id="notification">L'article a été ajouté avec succès.</div>
+    <button id="ok-button" onclick="hideNotification()">OK</button>
 
     <script>
         $("#article-form").submit(function(event) {
