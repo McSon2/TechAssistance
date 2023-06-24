@@ -1,8 +1,6 @@
 window.onload = function () {
 
-  let md = window.markdownit({
-    breaks: true // Convertir les retours à la ligne en <br>
-  });
+  let converter = new showdown.Converter();
 
   fetch("php/fetch_articles.php")
     .then((response) => {
@@ -41,7 +39,7 @@ window.onload = function () {
               let blogSection = document.querySelector("#blog");
               blogSection.classList.add("article-view");
 
-              let contenu = md.render(data.contenu);
+              let contenu = converter(data.contenu);
 
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
