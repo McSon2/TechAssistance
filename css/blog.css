@@ -85,6 +85,10 @@
     margin: 0 0 2rem;
     box-sizing: border-box;
   }
+
+  .article-view {
+    padding: 0 2rem;
+  }
 }
 
 /* Pour les écrans entre 769px et 1024px de large */
