@@ -36,7 +36,7 @@ window.onload = function () {
               let blogSection = document.querySelector("#blog");
               blogSection.classList.add("article-view");
 
-              let contenu = marked(data.contenu);
+              let contenu = window.marked(data.contenu);
 
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
