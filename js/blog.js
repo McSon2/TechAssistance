@@ -7,7 +7,6 @@ window.onload = function () {
       return response.json();
     })
     .then((data) => {
-      
       data.sort((a, b) => {
         let dateA = new Date(a.date_publication);
         let dateB = new Date(b.date_publication);
@@ -34,14 +33,14 @@ window.onload = function () {
           fetch("php/fetch_article.php?id=" + this.dataset.id)
             .then((response) => response.json())
             .then((data) => {
-              // Ici, vous pouvez afficher le contenu de l'article dans votre page
-              // Par exemple, vous pouvez remplacer le contenu de la section blog par le contenu de l'article
-              articlesContainer.innerHTML = `
+              let blogSection = document.querySelector("#blog");
+              blogSection.classList.add("article-view");
+              blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
-                <p class="date">Publié le ${data.date_publication}</p>
-                <p class="tags">Tags: ${data.tags}</p>
                 <p class="text">${data.contenu}</p>
-              `;
+                <p class="tags">Tags: ${data.tags}</p>
+                <p class="date">Publié le ${data.date_publication}</p>
+                `;
             })
             .catch((error) => console.error(error));
         });
