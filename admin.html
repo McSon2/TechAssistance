@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration du blog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Ajouter un nouvel article</h1>
-    <form action="php/admin.php" method="post">
+    <form id="article-form">
         <label for="titre">Titre:</label><br>
         <input type="text" id="titre" name="titre"><br>
         <label for="tags">Tags (séparés par des virgules):</label><br>
@@ -15,5 +16,25 @@
         <textarea id="contenu" name="contenu"></textarea><br>
         <input type="submit" value="Ajouter l'article">
     </form>
+    <div id="notification" style="display: none;">L'article a été ajouté avec succès.</div>
+    <button id="ok-button" style="display: none;" onclick="hideNotification()">OK</button>
+
+    <script>
+        $("#article-form").submit(function(event) {
+            event.preventDefault(); // Empêche le formulaire d'être soumis normalement
+
+            $.post("php/admin.php", $(this).serialize()) // Envoie les données du formulaire en arrière-plan
+                .done(function() {
+                    $("#notification").show(); // Affiche la notification
+                    $("#ok-button").show(); // Affiche le bouton OK
+                    $("#article-form")[0].reset(); // Vide le formulaire
+                });
+        });
+
+        function hideNotification() {
+            $("#notification").hide(); // Cache la notification
+            $("#ok-button").hide(); // Cache le bouton OK
+        }
+    </script>
 </body>
 </html>
