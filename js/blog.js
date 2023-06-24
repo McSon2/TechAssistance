@@ -43,7 +43,7 @@ window.onload = function () {
 
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
-                <div class="text">${contenu}</div>
+                <p class="text">${contenu}</p>
                 <p class="tags">Tags: ${data.tags}</p>
                 <p class="date">Publié le ${data.date_publication}</p>
                 `;
