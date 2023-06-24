@@ -38,24 +38,29 @@
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 10px;
-}
-
-#blog .date {
-  font-size: 0.8em;
-  color: #888;
-  margin-bottom: 20px;
-}
-
-#blog .tags {
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 #blog .text {
   font-size: 1em;
   line-height: 1.5em;
   text-align: justify;
+  margin-bottom: 20px;
+}
+
+#blog .tags {
+  font-size: 0.9em;
+  color: #555;
+  text-align: right;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#blog .date {
+  font-size: 0.8em;
+  color: #888;
+  text-align: right;
+  width: 100%;
 }
 
 /* Pour les écrans jusqu'à 768px de large */
