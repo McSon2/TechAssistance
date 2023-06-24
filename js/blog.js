@@ -39,7 +39,7 @@ window.onload = function () {
               let blogSection = document.querySelector("#blog");
               blogSection.classList.add("article-view");
 
-              let contenu = converter(data.contenu);
+              let contenu = converter.makeHtml(data.contenu);
 
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
