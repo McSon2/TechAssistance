@@ -1,4 +1,7 @@
 window.onload = function () {
+
+  let md = window.markdownit();
+
   fetch("php/fetch_articles.php")
     .then((response) => {
       if (!response.ok) {
@@ -36,7 +39,7 @@ window.onload = function () {
               let blogSection = document.querySelector("#blog");
               blogSection.classList.add("article-view");
 
-              let contenu = window.marked(data.contenu);
+              let contenu = md.render(data.contenu);
 
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
