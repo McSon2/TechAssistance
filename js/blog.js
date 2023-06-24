@@ -1,8 +1,8 @@
 window.onload = function () {
 
   let md = window.markdownit({
-    breaks: true // Convertir les retours à la ligne en <br>
-  });
+    breaks: true, // Convertir les retours à la ligne en <br>
+  }).use(window.markdownitBracketedSpans); // Utiliser le plugin
 
   fetch("php/fetch_articles.php")
     .then((response) => {
