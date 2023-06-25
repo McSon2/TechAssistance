@@ -23,7 +23,7 @@ window.onload = function () {
         articleCard.className = "article-card";
         articleCard.dataset.id = article.id; // Ajoutez l'ID de l'article comme attribut de données
 
-        moment.locale('fr');
+        moment.locale("fr");
 
         // Calculez la différence de temps
         let timeAgo = moment(
@@ -47,11 +47,19 @@ window.onload = function () {
 
               let contenu = converter.makeHtml(data.contenu);
 
+              moment.locale("fr");
+
+              // Calculez la différence de temps
+              let timeAgo = moment(
+                data.date_publication,
+                "YYYY-MM-DD HH:mm:ss"
+              ).fromNow();
+
               blogSection.innerHTML = `
                 <h1 class="title">${data.titre}</h1>
                 <p class="text">${contenu}</p>
                 <p class="tags">Tags: ${data.tags}</p>
-                <p class="date">Publié le ${data.date_publication}</p>
+                <p class="date"><i class="fas fa-clock"></i> ${timeAgo}</p>
                 `;
             })
             .catch((error) => console.error(error));
@@ -61,20 +69,19 @@ window.onload = function () {
         articlesContainer.appendChild(articleCard);
       });
 
-
       // Obtenez l'ID de l'article à partir de l'URL
       let params = new URLSearchParams(window.location.search);
-      let articleId = params.get('id');
+      let articleId = params.get("id");
 
       // Si un ID d'article est passé dans l'URL, déclenchez un clic sur la carte d'article correspondante
       if (articleId) {
-        let articleCard = document.querySelector(`.article-card[data-id='${articleId}']`);
+        let articleCard = document.querySelector(
+          `.article-card[data-id='${articleId}']`
+        );
         if (articleCard) {
           articleCard.click();
         }
       }
-
-      
     })
     .catch((error) => console.error(error));
 };
