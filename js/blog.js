@@ -68,20 +68,6 @@ window.onload = function () {
         // Ajoutez la carte d'article au conteneur des articles
         articlesContainer.appendChild(articleCard);
       });
-
-      // Obtenez l'ID de l'article à partir de l'URL
-      let params = new URLSearchParams(window.location.search);
-      let articleId = params.get("id");
-
-      // Si un ID d'article est passé dans l'URL, déclenchez un clic sur la carte d'article correspondante
-      if (articleId) {
-        let articleCard = document.querySelector(
-          `.article-card[data-id='${articleId}']`
-        );
-        if (articleCard) {
-          articleCard.click();
-        }
-      }
     })
     .catch((error) => console.error(error));
 };
