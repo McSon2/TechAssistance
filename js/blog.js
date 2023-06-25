@@ -1,5 +1,4 @@
 window.onload = function () {
-
   let converter = new showdown.Converter();
 
   fetch("php/fetch_articles.php")
@@ -24,11 +23,17 @@ window.onload = function () {
         articleCard.className = "article-card";
         articleCard.dataset.id = article.id; // Ajoutez l'ID de l'article comme attribut de données
 
+        // Calculez la différence de temps
+        let timeAgo = moment(
+          article.date_publication,
+          "YYYY-MM-DD HH:mm:ss"
+        ).fromNow();
+
         // Utilisez les littéraux de gabarit pour créer le HTML de la carte d'article
         articleCard.innerHTML = `
           <h2>${article.titre}</h2>
           <p class="article-tags">Tags: ${article.tags}</p>
-          <p class="article-date">Publié le ${article.date_publication}</p>
+          <p class="article-date"><i class="fa-light fa-clock"></i>${timeAgo}</p>
         `;
 
         // Ajoutez un événement click à la carte d'article
