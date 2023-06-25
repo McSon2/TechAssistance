@@ -23,6 +23,8 @@ window.onload = function () {
         articleCard.className = "article-card";
         articleCard.dataset.id = article.id; // Ajoutez l'ID de l'article comme attribut de données
 
+        moment.locale('fr');
+
         // Calculez la différence de temps
         let timeAgo = moment(
           article.date_publication,
