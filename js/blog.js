@@ -39,35 +39,48 @@ window.onload = function () {
 
         // Ajoutez un événement click à la carte d'article
         articleCard.addEventListener("click", function () {
-          fetch("php/fetch_article.php?id=" + this.dataset.id)
-            .then((response) => response.json())
-            .then((data) => {
-              let blogSection = document.querySelector("#blog");
-              blogSection.classList.add("article-view");
-
-              let contenu = converter.makeHtml(data.contenu);
-
-              moment.locale("fr");
-
-              // Calculez la différence de temps
-              let timeAgo = moment(
-                data.date_publication,
-                "YYYY-MM-DD HH:mm:ss"
-              ).fromNow();
-
-              blogSection.innerHTML = `
-                <h1 class="title">${data.titre}</h1>
-                <p class="text">${contenu}</p>
-                <p class="tags">Tags: ${data.tags}</p>
-                <p class="date"><i class="fas fa-clock"></i> ${timeAgo}</p>
-                `;
-            })
-            .catch((error) => console.error(error));
+          loadArticle(this.dataset.id);
         });
 
         // Ajoutez la carte d'article au conteneur des articles
         articlesContainer.appendChild(articleCard);
       });
+
+      // Obtenez l'ID de l'article à partir de l'URL
+      let params = new URLSearchParams(window.location.search);
+      let articleId = params.get("id");
+
+      // Si un ID d'article est passé dans l'URL, chargez l'article directement
+      if (articleId) {
+        loadArticle(articleId);
+      }
     })
     .catch((error) => console.error(error));
 };
+
+function loadArticle(id) {
+  fetch("php/fetch_article.php?id=" + id)
+    .then((response) => response.json())
+    .then((data) => {
+      let blogSection = document.querySelector("#blog");
+      blogSection.classList.add("article-view");
+
+      let contenu = converter.makeHtml(data.contenu);
+
+      moment.locale("fr");
+
+      // Calculez la différence de temps
+      let timeAgo = moment(
+        data.date_publication,
+        "YYYY-MM-DD HH:mm:ss"
+      ).fromNow();
+
+      blogSection.innerHTML = `
+        <h1 class="title">${data.titre}</h1>
+        <p class="text">${contenu}</p>
+        <p class="tags">Tags: ${data.tags}</p>
+        <p class="date"><i class="fas fa-clock"></i> ${timeAgo}</p>
+        `;
+    })
+    .catch((error) => console.error(error));
+}
