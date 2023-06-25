@@ -52,7 +52,9 @@ window.onload = function () {
 
       // Si un ID d'article est passé dans l'URL, chargez l'article directement
       if (articleId) {
+        document.getElementById("loading-spinner").style.display = "block"; // Affiche le spinner
         loadArticle(articleId);
+        document.getElementById("loading-spinner").style.display = "none"; // Cache le spinner
       }
     })
     .catch((error) => console.error(error));
