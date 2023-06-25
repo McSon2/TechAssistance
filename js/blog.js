@@ -34,7 +34,6 @@ window.onload = function () {
         // Utilisez les littéraux de gabarit pour créer le HTML de la carte d'article
         articleCard.innerHTML = `
           <h2>${article.titre}</h2>
-          <p class="article-tags">Tags: ${article.tags}</p>
           <p class="article-date"><i class="fas fa-clock"></i> ${timeAgo}</p>
         `;
 
