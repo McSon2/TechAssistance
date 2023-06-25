@@ -33,7 +33,7 @@ window.onload = function () {
         articleCard.innerHTML = `
           <h2>${article.titre}</h2>
           <p class="article-tags">Tags: ${article.tags}</p>
-          <p class="article-date"><i class="fa-regular fa-clock"></i> ${timeAgo}</p>
+          <p class="article-date"><i class="fas fa-clock"></i> ${timeAgo}</p>
         `;
 
         // Ajoutez un événement click à la carte d'article
