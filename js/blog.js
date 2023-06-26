@@ -79,7 +79,6 @@ function loadArticle(id) {
       blogSection.innerHTML = `
         <h1 class="title">${data.titre}</h1>
         <p class="text">${contenu}</p>
-        <p class="tags">Tags: ${data.tags}</p>
         <p class="date"><i class="fas fa-clock"></i> ${timeAgo}</p>
         `;
     })
