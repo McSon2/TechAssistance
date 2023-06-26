@@ -7,30 +7,7 @@ window.onload = function () {
 
   // Si un ID d'article est passé dans l'URL, chargez l'article directement
   if (articleId) {
-    fetch("php/fetch_article.php?id=" + articleId)
-      .then((response) => response.json())
-      .then((data) => {
-        let blogSection = document.querySelector("#blog");
-        blogSection.classList.add("article-view");
-
-        let contenu = converter.makeHtml(data.contenu);
-
-        moment.locale("fr");
-
-        // Calculez la différence de temps
-        let timeAgo = moment(
-          data.date_publication,
-          "YYYY-MM-DD HH:mm:ss"
-        ).fromNow();
-
-        blogSection.innerHTML = `
-        <h1 class="title">${data.titre}</h1>
-        <p class="text">${contenu}</p>
-        <p class="tags">Tags: ${data.tags}</p>
-        <p class="date"><i class="fas fa-clock"></i> ${timeAgo}</p>
-        `;
-      })
-      .catch((error) => console.error(error));
+    loadArticle(articleId);
   } else {
     // Sinon, chargez tous les articles
     fetch("php/fetch_articles.php")
