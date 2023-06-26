@@ -57,7 +57,7 @@
 }
 
 .article-view p a {
-  color: #007bff; /* Couleur du lien */
+  color: var(--text-color-alt); /* Couleur du lien */
   text-decoration: none; /* Pas de soulignement par défaut */
   transition: color 0.3s; /* Transition animée */
 
