@@ -1,3 +1,15 @@
+a {
+  color: #007bff; /* Couleur du lien */
+  text-decoration: none; /* Pas de soulignement par défaut */
+  transition: border 0.3s, background-color 0.3s; /* Transition animée */
+}
+
+a:hover {
+  border: 1px solid #007bff; /* Bordure au survol */
+  background-color: #f1f1f1; /* Couleur d'arrière-plan au survol */
+}
+
+
 .sectionblog {
   padding: 2rem;
   text-align: center;
