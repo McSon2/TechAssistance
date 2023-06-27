@@ -3,6 +3,7 @@
   --colorgen: #5C4033;
   --text-color: #8a716c;
   --text-color-alt: #873F12;
+  --text-color-hover: #e58041;
   --background-color: #f5f5f5;
   --background-color-alt: #e7e7de;
   --background-container: #fefcfa;
@@ -78,7 +79,7 @@ ul {
 }
 
 .menu a:hover {
-  color: var(--text-color);
+  color: var(--text-color-hover);
 }
 
 /* Hero Banner */
@@ -136,7 +137,7 @@ ul {
 }
 
 .bouton-hero:hover {
-  background-color: var(--text-color);
+  background-color: var(--text-color-hover);
 }
 
 /* Sections */
@@ -427,7 +428,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: var(--text-color);
+  background-color: var(--text-color-hover);
   transition: background-color 0.3s ease;
 }
 
@@ -493,7 +494,7 @@ button[type="submit"]:hover {
 }
 
 .reseaux-sociaux a:hover i {
-  color: var(--text-color);
+  color: var(--text-color-hover);
 }
 
 /* Media Queries */
@@ -691,7 +692,7 @@ html {
 }
 
 #backToTop:hover {
-  background-color: var(--text-color);
+  background-color: var(--text-color-hover);
 }
 
 #backToTop i {
@@ -768,7 +769,7 @@ body::-webkit-scrollbar {
 }
 
 .close-popup:hover {
-  color: var(--text-color-alt);
+  color: var(--text-color-hover);
 }
 
 .close-popup i {
