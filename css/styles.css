@@ -445,7 +445,7 @@ button[type="submit"]:hover {
 
 .footer {
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text-color-alt);
   padding: 0.1rem 0;
 }
 
@@ -489,11 +489,11 @@ button[type="submit"]:hover {
 
 .reseaux-sociaux i {
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: var(--text-color-alt);
 }
 
 .reseaux-sociaux a:hover i {
-  color: var(--text-color-alt);
+  color: var(--text-color);
 }
 
 /* Media Queries */
