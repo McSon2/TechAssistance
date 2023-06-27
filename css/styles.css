@@ -1,8 +1,7 @@
 /* Réinitialisation CSS */
 :root {
-  --colorgen: #007BFF; /* Bleu profond */
-  --text-color: #2ECC71; /* Vert menthe */
-  --text-color-alt: #FF851B; /* Orange vif */
+  --colorgen: #5C4033;
+  --text-color: #8a716c;
   --text-color-alt: #e58041;
   --background-color: #f5f5f5;
   --background-color-alt: #e7e7de;
@@ -21,11 +20,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif; /* Police pour les titres */
+  font-family: "Lato", sans-serif;
 }
 
 body {
-  font-family: "Roboto", sans-serif; /* Police pour le corps du texte */
+  font-family: "Apparel", sans-serif;
   line-height: 1.6;
   color: var(--colorgen);
 }
@@ -76,7 +75,6 @@ ul {
   color: var(--text-color-alt);
   transition: color 0.3s ease;
   font-size: 1.1rem;
-  font-family: "Lato", sans-serif; /* Police pour le menu */
 }
 
 .menu a:hover {
