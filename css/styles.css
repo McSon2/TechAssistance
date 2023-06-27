@@ -128,7 +128,7 @@ ul {
 
 .bouton-hero {
   display: inline-block;
-  background-color: var(--text-color-alt);
+  background-color: var(--text-color-hover);
   color: var(--background-color);
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
@@ -137,7 +137,7 @@ ul {
 }
 
 .bouton-hero:hover {
-  background-color: var(--text-color-hover);
+  background-color: var(--text-color-alt);
 }
 
 /* Sections */
