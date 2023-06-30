@@ -141,7 +141,8 @@ ul {
 }
 
 .bouton-appel {
-  display: block;
+  display: inline-block;
+  width: auto;
   margin-top: 1rem;
   background-color: var(--text-color-hover);
   color: var(--background-color);
